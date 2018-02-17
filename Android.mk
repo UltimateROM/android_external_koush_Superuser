@@ -21,7 +21,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_STATIC_LIBRARIES := libc libcutils liblog
 LOCAL_C_INCLUDES := external/sqlite/dist
-LOCAL_SRC_FILES := Superuser/jni/su/su.c Superuser/jni/su/daemon.c Superuser/jni/su/activity.c Superuser/jni/su/db.c Superuser/jni/su/utils.c Superuser/jni/su/pts.c ../../sqlite/dist/sqlite3.c
+LOCAL_SRC_FILES := Superuser/jni/su.c Superuser/jni/daemon.c Superuser/jni/activity.c Superuser/jni/db.c Superuser/jni/utils.c Superuser/jni/pts.c ../../sqlite/dist/sqlite3.c
 LOCAL_CFLAGS := -DSQLITE_OMIT_LOAD_EXTENSION -DREQUESTOR=\"$(SUPERUSER_PACKAGE)\"
 
 ifdef SUPERUSER_PACKAGE_PREFIX
