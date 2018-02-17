@@ -110,7 +110,7 @@ public class Settings {
     }
 
     private static final String KEY_TIMEOUT = "timeout";
-    public static final int REQUEST_TIMEOUT_DEFAULT = 2147483647;
+    public static final int REQUEST_TIMEOUT_DEFAULT = 30;
     public static int getRequestTimeout(Context context) {
         return getInt(context, KEY_TIMEOUT, REQUEST_TIMEOUT_DEFAULT);
     }
