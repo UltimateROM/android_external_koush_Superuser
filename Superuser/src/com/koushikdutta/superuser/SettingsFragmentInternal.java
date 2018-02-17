@@ -318,9 +318,11 @@ public class SettingsFragmentInternal extends BetterListFragmentInternal {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(R.string.request_timeout);
                 String[] seconds = new String[3];
-                for (int i = 0; i < seconds.length; i++) {
+                for (int i = 0; i < seconds.length - 1; i++) {
                     seconds[i] = getString(R.string.number_seconds, (i + 1) * 10);
                 }
+
+		seconds[2] = getString(R.string.number_seconds, 2147483647);
                 builder.setItems(seconds, new OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
