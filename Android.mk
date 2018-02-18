@@ -19,7 +19,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := su
 LOCAL_MODULE_TAGS := optional
 LOCAL_FORCE_STATIC_EXECUTABLE := true
-LOCAL_STATIC_LIBRARIES := libc libcutils liblog
+LOCAL_STATIC_LIBRARIES := libc_nolto libcutils liblog
 LOCAL_C_INCLUDES := external/sqlite/dist
 LOCAL_SRC_FILES := Superuser/jni/su/su.c Superuser/jni/su/daemon.c Superuser/jni/su/activity.c Superuser/jni/su/db.c Superuser/jni/su/utils.c Superuser/jni/su/pts.c ../../sqlite/dist/sqlite3.c
 LOCAL_CFLAGS := -DSQLITE_OMIT_LOAD_EXTENSION -DREQUESTOR=\"$(SUPERUSER_PACKAGE)\"
@@ -31,6 +31,8 @@ endif
 ifdef SUPERUSER_EMBEDDED
   LOCAL_CFLAGS += -DSUPERUSER_EMBEDDED
 endif
+
+LOCAL_FORCE_STATIC_EXECUTABLE_NOLTO := true
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 include $(BUILD_EXECUTABLE)
